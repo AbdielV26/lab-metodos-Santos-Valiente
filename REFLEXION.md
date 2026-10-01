@@ -11,20 +11,26 @@ Escriban debajo de cada pregunta. (Se evalúa después; el autograde no califica
 **A1.** `aplicarFactor` modifica el arreglo original, pero `copiaEscalada` no. Expliquen por qué, y qué es lo que
 realmente se copia cuando le pasan un arreglo a un método.
 
-> _Respuesta:_
+> aplicarFactor modifica el arreglo original porque recibe nuevos valores al momento de multiplicar cada lectura por factor. Ejemplo linea 83-84.
+>copiaEscalada no modifica el arreglo ya que al usar la palabra reservada new devuelve un arreglo NUEVO con cada lectura * factor. Ejemplo linea 94-96. 
+> Lo que realmemnte se copia es el valor de referencia. 
 
 **A2.** ¿Por qué Java no permite tener `double calcularCosto(double kwh)` y `int calcularCosto(double kwh)` en la misma clase?
 ¿Qué versión de `calcularCosto` elige Java para la llamada `calcularCosto(5, 2.5, 0.1)` y por qué?
 
-> _Respuesta:_
+> Porque eso genera un conflicto al momento de decidir cual de los 2 métodos usar ya que ambos tienen la misma firma que sería calcularCosto (double kwh). 
+> Usa la versión 3 que va de la linea 132 a la 133. Porque calcularCosto(5, 2.5, 0.1) complementa perfectamente con calcularCosto(int dias, double kwhPorDia, double tarifa) si hablamos de los tipos de datos y su posición. 
 
 **A3.** En `Medidor`, ¿para qué sirve `this(id, 0)` en el constructor de un solo parámetro? ¿Qué ventaja tiene frente a copiar y pegar el código del otro constructor?
 
-> _Respuesta:_
+> this(id, 0) sirve para llamar a otro constructor de la msima clase que acepta números enteros como parametro. 
+> La ventaja es que facilita hacer cambios a futuro sin ningún problema. 
 
 **A4.** ¿Por qué los atributos de `Medidor` son `private`? ¿Qué protege `registrarLectura` y qué podría pasar si `lecturaActual` fuera público?
 
-> _Respuesta:_
+> Es private para salvaguardar que nadie fuera de la clase pueda tocar los atributos de Medidor. 
+>Protege que la lectura no pueda retroceder. NO cambia nada y devuelve false. Si es valida: lecturaAnterior toma el valor de lecturaActual, lecturaActual toma nuevaLectura, y devuelve true. Linea 51 a la 57.
+>Lo principal es que cualquiera puede modificar los atributos de lecturaActual y poner datos a su antojo en lecturaActual. 
 
 ---
 
