@@ -8,7 +8,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Potencia: " + Calculos.calcularPotencia(120, 5));
-        Calculos.imprimirEncabezado("Ana Perez");
+        Calculos.imprimirEncabezado("Jesús Santos");
         System.out.println("Consumo 250 kWh: " + Calculos.clasificarConsumo(250));
 
         double[] lecturas = {10, 20, 30};
